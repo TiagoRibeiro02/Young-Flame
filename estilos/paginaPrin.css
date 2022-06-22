@@ -1,0 +1,336 @@
+/*-------nav menu-------*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    font-size: 16px;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 9999px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 30vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        z-index: 9;
+    }
+  .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+  .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+/*--------------------------*/
+
+.inicial {
+    text-align: center;
+    color: white;
+}
+
+main{
+    background: url("pexels-photo-5037617.jpeg") no-repeat center center;
+    background-size: cover;
+    height: 80vh;
+}
+
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center .titulo {
+    font-family: "Anton", Copperplate, "Lucida Console", serif;
+    font-size: 75px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.comprar {
+    border: 2px solid black;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    font-size: 16px;
+    padding: 14px 28px;
+    cursor: pointer;
+    
+}
+
+.comprar:hover {
+    background: #e7e7e7;
+    color: black;
+}
+
+
+
+.ediLim .titulo {
+    font-family: "Anton", Copperplate, "Lucida Console", serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.column {
+    float: left;
+    width: 23.33%;
+    padding: 10px;
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    color: black;
+    padding: 2px;
+    text-align: center;
+}
+
+.NovProd .titulo {
+    font-family: "Anton", Copperplate, "Lucida Console", serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+/*----footer----*/
+
+:root {
+  --footer-bg: #23232e;
+  --color: #f2f3fb;
+  --color-smooth: #9da2ae;
+  --input-border: #3a456a;
+  --btn-bg-color: #f1f2fc;
+  --btn-hover-bg: #d5d9f6;
+  --btn-color: #1e2641;
+}
+
+footer {
+  font-size: 16px;
+  background: var(--footer-bg);
+  padding: 2em 4em;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 1em;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+footer ul {
+  list-style: none;
+}
+
+.col {
+  flex: 1;
+}
+
+.col-title {
+  font-family: "Merriweather", serif;
+  color: var(--color);
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 0.5em 0;
+}
+
+.col-list a {
+  color: var(--color-smooth);
+  text-decoration: none;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.col-list a:hover,
+.col-list a:focus {
+  text-decoration: underline;
+}
+
+.subscribe-form,
+.social-media {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em 0;
+}
+
+.subscribe-input {
+  width: auto;
+  flex: 1;
+  background: transparent;
+  border: 0.06em solid var(--input-border);
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: all 0.25s ease 0s;
+  display: inline-block;
+  color: var(--color-smooth);
+}
+
+.subscribe-input:focus {
+  outline: none;
+  border-color: var(--color);
+  color: var(--color);
+}
+
+.subscribe-btn {
+  background: var(--btn-bg-color);
+  border: none;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: all 0.25s ease 0s;
+  display: inline-block;
+  color: var(--btn-color);
+  cursor: pointer;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background: var(--btn-hover-bg);
+}
+
+.form-title,
+.social-col-title {
+  font-size: 1em;
+  color: var(--color);
+  font-weight: 500;
+}
+
+.social-media {
+  flex-direction: column;
+}
+
+.social-media-list {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-media-list a {
+  padding: 0.5em;
+  color: var(--color-smooth);
+  display: flex;
+  border-radius: 0.3em;
+  transition: all 0.25s ease 0s;
+}
+
+.social-media-list a:hover,
+.social-media-list a:focus {
+  color: var(--color);
+  background: #ffffff1a;
+}
+
+.social-media-list svg {
+  width: 1.5em;
+  height: 1.5em;
+  transition: all 0.25s ease 0s;
+}
+
+@media screen and (max-width: 750px) {
+  footer {
+    padding: 2em;
+    flex-direction: column;
+  }
+}
